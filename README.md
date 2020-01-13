@@ -27,7 +27,7 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 
 ![Sample Screenshot](https://anu-dam.github.io/Developer-Profile-Generator/)
 
-[Link](https://anu-dam.github.io/Developer-Profile-Generator/)
+https://anu-dam.github.io/Developer-Profile-Generator
 
 
 
