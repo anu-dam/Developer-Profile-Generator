@@ -1,3 +1,5 @@
+##### https://anu-dam.github.io/Developer-Profile-Generator
+
 ### Developer-Profile-Generator
 
 Create a command-line application that dynamically generates a PDF profile from a GitHub username.
@@ -27,7 +29,6 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 
 [Sample Screenshot](https://anu-dam.github.io/Developer-Profile-Generator/)
 
-https://anu-dam.github.io/Developer-Profile-Generator
 
 
 
