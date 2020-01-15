@@ -26,8 +26,7 @@ The PDF will be populated with the following:
 When preparing a report for stakeholders, it is important to have up-to-date information about members of the development team. Rather than navigating to each team member's GitHub profile, a command-line application will allow for quick and easy generation of profiles in PDF format.
 
 
-[Process](https://s3.amazonaws.com/img0.recordit.co/yHQxnKnnxy.mp4?AWSAccessKeyId=AKIAINSRFOQXTN4DT46A&Expires=1579052832&Signature=lXRtFrzJnd1SWaUtMukHYYxq0Tg%3D
-)
+[Process](https://github.com/anu-dam/Developer-Profile-Generator/blob/master/demo.gif)
 
 [Sample PDF](https://github.com/anu-dam/Developer-Profile-Generator/blob/master/PDF%20DATA/profile.pdf)
 
