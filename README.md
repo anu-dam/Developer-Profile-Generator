@@ -1,16 +1,17 @@
 
 ### Developer-Profile-Generator
 
-Create a command-line application that dynamically generates a PDF profile from a GitHub username.
+Command-line application that dynamically generates a PDF profile from a GitHub username by using Node and HTML.
 
 #### User Story
 
-The user will be prompted for a favorite color, which will be used as the background color for cards and shadows.
+The user will be prompted for the GITHUB user name and favorite color, which will be used as the background color for top and bottom cards and shadows.
 
 The PDF will be populated with the following:
 
 * Profile image
 * User name
+* Company
 * Links to the following:
   * User location via Google Maps
   * User GitHub profile
