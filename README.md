@@ -30,4 +30,4 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 
 [Sample PDF](https://github.com/anu-dam/Developer-Profile-Generator/blob/master/PDF%20DATA/profile.pdf)
 
-
+[HTML File]( https://anu-dam.github.io/Developer-Profile-Generator/profile.html)
