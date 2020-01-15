@@ -5,6 +5,8 @@ const inquirer = require("inquirer");
 const util = require("util");
 var pdf = require('html-pdf');
 
+              
+
 const writeFileAsync = util.promisify(fs.writeFile);
 
 inquirer.prompt([{
@@ -32,14 +34,114 @@ inquirer.prompt([{
       <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./Assets/CSS/style.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
         <title>Developer Profile ${res.data.name}</title>
       </head>
       <style>
 
+      .display-4{
+        margin-top: 20px;
+    }
+    
+    .center-block {
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+     }
+    
+     .row {
+        background: #f8f9fa;
+        margin-top: 20px;
+      }
+      
+      .col {
+        border: solid 1px #6c757d;
+        padding: 10px;
+      }
+      
+      .card{
+          border: none;
+      }
+    
+      .card-body{
+          margin-bottom: 15px;
+      }
+    
+      .card-body {
+        width: 80%;
+         border: 1px solid rgba(0,0,0,.125);
+          border-radius: .25rem;
+          background: #fff;
+          /*position: absolute;
+          top: 320px;
+          left: 76px;*/
+          margin-top:-50px;
+          margin-left: 50px;
+      }
+    
+      .card-img-top{
+        width: 100%;
+        height: 100px;
+        background-color: blue;
+      }
+    
+      #git{
+          margin-left: 15px;
+      }
+    
+      #topcards{
+          margin-top: 50px;
+          background-color: white;
+      }
+    
+      #bottomcards{
+          margin-top: 50px;
+          background-color: white;
+      }
+     
+      .card-body{
+          background-color: rgb(120, 194, 240);
+      }
+    
+      #mainbody{
+          background-color: lightgray;
+          margin-bottom: 50px;
+      }
+    
+      #bio{
+    
+        text-align: center;
+        margin-bottom: 75px;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    
+      .card-title{
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+      }
+    
+      .card-secondline{
+    
+        font-weight: bold;
+        font-size: 22px;
+        text-align: center;
+      }
+    
+      .card-text{
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+      }
+    
+      .card-bottam{
+          margin-top: 20px;
+          height: 50px;
+      }
+    
       .card-img-top{
         background-color: ${bgcolor};
       }
@@ -71,17 +173,14 @@ inquirer.prompt([{
             <div class="row" id="mainbody">
               <div class="span4"><img class="center-block" src="${res.data.avatar_url}"class="profileimage" alt="image"></div>
                 <div class="center-block" id="socialicon">
-                  <p> <i class="material-icons">add_location</i>
                     <a href="${locationURL}">${res.data.location}</a>
                   </p>
                 </div>
                   <div class="center-block" id="socialicon" >
-                      <p><i class="material-icons">group_add</i>
                             <a href="${res.data.html_url}">GITHUB</a>
                       </p>
                   </div>
                     <div class="center-block" id="socialicon" >
-                      <p><i class="material-icons">forum</i>
                       <a href="${res.data.blog}">Blog</a>
                       </p>
                     </div>
@@ -96,6 +195,8 @@ inquirer.prompt([{
               </div>
             </div>
           </div>
+          </div>
+          <div class="row" id="topcards">
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
@@ -114,6 +215,8 @@ inquirer.prompt([{
               </div>
             </div>
           </div>
+          </div>
+          <div class="row" id="bottomcards">
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
@@ -130,21 +233,38 @@ inquirer.prompt([{
       </body>
       </html> `
 
-      var filename = res.data.login + ".html";
+      var filename = "profile.html";
 
       return  writeFileAsync(filename, generateHTML)
 
       
     })
-    .then(function (err) {
+    .then(function () {
 
-      if(err){
-        console.log("error occurs" + err)
-      }
-      console.log('suceesfully created ')
+      console.log('Suceesfully created ')
     }) 
+
+    .catch((error) => {
+      console.log('Error Occurs and details are ' + error)
+  })
+
+  .then(function () {
+
+    var html = fs.readFileSync('./profile.html', "UTF-8");
+    var options = {width: "25in",
+                   height: "30in"};
+                  
+
+
+  pdf.create(html.toString(),options).toFile(("./PDF DATA/profile.pdf"), function(err,res){
+    console.log(res.filename);
     
   });
 
+}) 
+
+}); 
+
   
 
+  
