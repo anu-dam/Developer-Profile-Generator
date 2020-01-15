@@ -29,6 +29,6 @@ When preparing a report for stakeholders, it is important to have up-to-date inf
 [Process](https://s3.amazonaws.com/img0.recordit.co/yHQxnKnnxy.mp4?AWSAccessKeyId=AKIAINSRFOQXTN4DT46A&Expires=1579052832&Signature=lXRtFrzJnd1SWaUtMukHYYxq0Tg%3D
 )
 
-
+[Sample PDF](https://github.com/anu-dam/Developer-Profile-Generator/blob/master/PDF%20DATA/profile.pdf)
 
 
